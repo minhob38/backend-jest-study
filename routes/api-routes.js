@@ -1,6 +1,6 @@
 const express = require("express");
 const controller = require("../controller/employee.controller");
-const verifyToken = require("../routes/jwt-token-verify");
+const verifyToken = require("./jwt-token-verify");
 const router = express.Router();
 
 router.get("/", (req, res) => {

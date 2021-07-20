@@ -3,6 +3,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const employeeModel = require("../model/employee.model");
+require("dotenv").config();
+
 const saltRounds = 10;
 
 const schema = joi.object({
@@ -67,7 +69,7 @@ exports.getEmployeeById = async (req, res, next) => {
   }
 }
 
-exports.updateEmployeeById = (req, res, next) => {
+exports.updateEmployeeById = async (req, res, next) => {
   try {
     const updateEmployee = await employeeModel.findByIdAndUpdate(
       req.params.employee_id,
@@ -125,7 +127,7 @@ exports.loginEmployee = async (req, res, next) => {
 
     const jwtToken = await jwt.sign({
       data: employee
-    }, "secret", { expiresIn: "1h" });
+    }, process.env.JWT_TOKEN_KEY, { expiresIn: "1h" });
 
     res.header("auth-token", jwtToken);
     res.status(201).json(newEmployee);
