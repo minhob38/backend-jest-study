@@ -51,6 +51,7 @@ exports.getAllEmployees = async (req, res, next) => {
       res.status(404).json("not found");
     }
   } catch(err) {
+    console.log(err);
     res.status(500).json(err);
   }
 };
@@ -65,6 +66,7 @@ exports.getEmployeeById = async (req, res, next) => {
       res.status(404).send("not found");
     }
   } catch (err) {
+    console.log(err);
     res.status(500).send(err);
   }
 }
@@ -85,22 +87,23 @@ exports.updateEmployeeById = async (req, res, next) => {
       res.status(400).send();
     }
   } catch(err) {
+    console.log(err);
     res.status(500).json(err);
   }
 };
 
 
-exports.deleteByEmployeeId = async (req, res, next) => {
+exports.deleteByEmployeeId = (req, res, next) => {
   employeeModel.findByIdAndDelete(req.params.employee_id)
     .then(result => {
       if (result) {
         res.status(200).json(result);
       } else {
-        console.log("User Not Fount");
         res.status(404).json("User Not Found");
       }
     })
     .catch(err => {
+      console.log(err);
       res.status(500).send(err);
     });
 };
