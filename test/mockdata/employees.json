@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "60f64fb1e90a111f2dad5d8c",
+    "name": "robin",
+    "email": "robin@gmail.com",
+    "password": "qwerasdf",
+    "created_date": "2021-07-20T04:23:13.459Z",
+    "__v": 0
+  },
+  {
+    "_id": "60f650b6b4d5131f69be5fa5",
+    "name": "robin",
+    "email": "robin@gmail.com",
+    "password": "qwerasdf",
+    "created_date": "2021-07-20T04:27:34.789Z",
+    "__v": 0
+  },
+  {
+    "_id": "60f65453af72e7205af902fc",
+    "name": "robin",
+    "email": "robin@gmail.com",
+    "password": "qwerasdf",
+    "created_date": "2021-07-20T04:42:59.117Z",
+    "__v": 0
+  },
+  {
+    "_id": "60f6571c53deab2117aed5da",
+    "name": "robin",
+    "email": "robin1@gmail.com",
+    "password": "$2b$10$kc6xiYlAnISOjqniz1iRneIP.e/h/RtwmVcOhBpmTJMjFLcQjQCIW",
+    "created_date": "2021-07-20T04:54:52.826Z",
+    "__v": 0
+  }
+]
