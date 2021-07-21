@@ -71,7 +71,7 @@ exports.getEmployeeById = async (req, res, next) => {
 
 exports.updateEmployeeById = async (req, res, next) => {
   try {
-    const updateEmployee = await employeeModel.findByIdAndUpdate(
+    const updatedEmployee = await employeeModel.findByIdAndUpdate(
       req.params.employee_id,
       req.body,
       {
@@ -79,13 +79,13 @@ exports.updateEmployeeById = async (req, res, next) => {
       }
     );
 
-    if (this.updateEmployee) {
+    if (updatedEmployee) {
       res.status(201).json(updatedEmployee)
     } else {
       res.status(400).send();
     }
   } catch(err) {
-    console.log(err);
+    res.status(500).json(err);
   }
 };
 

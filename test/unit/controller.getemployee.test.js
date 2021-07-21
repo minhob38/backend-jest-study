@@ -16,6 +16,7 @@ beforeEach(() => {
 
 afterEach(() => {
   model.findById.mockClear();
+  model.find.mockClear();
 });
 
 describe("controller.getEmployeeById", () => {
@@ -69,7 +70,7 @@ describe("controller.getAllEmployees", () => {
     expect(res._getJSONData()).toStrictEqual("not found");
     expect(res._isEndCalled()).toBeTruthy();
   });
-  
+
   test("return 500 when find throws exception", async () => {
     model.find.mockRejectedValue("fake exception from find");
     await controller.getAllEmployees(req, res, next);
