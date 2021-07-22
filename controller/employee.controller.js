@@ -128,12 +128,14 @@ exports.loginEmployee = async (req, res, next) => {
       return res.status(400).send("you provided an invalid password, please try again");
     }
 
-    const jwtToken = await jwt.sign({
-      data: employee
-    }, process.env.JWT_TOKEN_KEY, { expiresIn: "1h" });
+    const jwtToken = await jwt.sign(
+      { data: employee },
+      process.env.JWT_TOKEN_KEY,
+      { expiresIn: "1h" }
+    );
 
     res.header("auth-token", jwtToken);
-    res.status(201).json(newEmployee);
+    res.status(201).json(employee);
   } catch(err) {
     console.log(err);
     res.status(500).json(err);
