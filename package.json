@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test:unit": "jest test/unit/*"
+    "start": "nodemon server.js",
+    "test:unit": "jest test/unit/*",
+    "test:int": "jest test/integration/*"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,8 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.3"
+    "mongoose": "^5.13.3",
+    "supertest": "^6.1.4"
   },
   "devDependencies": {
     "jest": "^27.0.6",
